@@ -1,0 +1,83 @@
+@NineDotAssessment_HostAddress = http://localhost:5035
+
+# POST request with JSON payload
+POST {{NineDotAssessment_HostAddress}}/api/v1/account/register-user
+Content-Type: application/json
+
+{
+  "customerName": "first string",
+  "icNumber": "1234567890",
+  "email": "string@gmail.com",
+  "phoneNumber": "+1234567890"
+}
+###
+#request Otp for phone number verification
+POST {{NineDotAssessment_HostAddress}}/api/v1/account/request-otp
+Content-Type: application/json
+
+{
+  "userId": 1,
+  "otpType": 1
+}
+
+###
+#request OTP for Email verification
+POST {{NineDotAssessment_HostAddress}}/api/v1/account/request-otp
+Content-Type: application/json
+
+{
+  "userId": 1,
+  "otpType": 2
+}
+###
+
+POST {{NineDotAssessment_HostAddress}}/api/v1/account/verify-phone-number
+Content-Type: application/json
+
+{
+  "userId": 1,
+  "verificationCode": "8569",
+  "verificationId": 1
+}
+
+###
+POST {{NineDotAssessment_HostAddress}}/api/v1/account/verify-email
+Content-Type: application/json
+
+{
+  "userId": 1,
+  "verificationCode": "4225",
+  "verificationId": 2
+}
+
+
+
+###
+POST {{NineDotAssessment_HostAddress}}/api/v1/account/accept-privacy-policy
+Content-Type: application/json
+
+{
+  "userId": 1
+}
+
+
+###
+POST {{NineDotAssessment_HostAddress}}/api/v1/account/create-pin
+Content-Type: application/json
+
+{
+  "pinCode": "1234",
+  "confirmPinCode": "1234",
+  "userId": 1
+}
+
+
+
+###
+POST {{NineDotAssessment_HostAddress}}/api/v1/account/login
+Content-Type: application/json
+
+{
+  "icNumber": "1234567890",
+  "pin": "1234"
+}

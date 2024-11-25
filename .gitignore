@@ -1,0 +1,10 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/NineDotAssessment/bin/Debug/net8.0
+/.vs
+/NineDotAssessment/obj
+*.db
+*.db-shm
+*.db-wal
